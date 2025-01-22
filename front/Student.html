@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #e98f07;
+        }
+        .container {
+            background-color: rgb(2, 235, 95);
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 90%;
+            padding: 10px;
+            background-color: #ec0a0a;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .role-selection {
+            text-align: center;
+        }
+        .role-selection button {
+            width: 48%;
+            margin: 5px;
+            background-color: #2196F3;
+        }
+        .role-selection button:hover {
+            background-color: #0b7dda;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Select Your Role</h2>
+        <div class="role-selection">
+            <button id="studentBtn">Student</button>
+            <button id="teacherBtn">Teacher</button>
+        </div>
+        
+        <form id="studentForm" style="display:none;">
+            <h3>Student</h3>
+            <label for="studentCode">Enter Classroom Code:</label>
+            <input type="text" id="studentCode" placeholder="Classroom Code" required>
+            <button type="submit">Join Classroom</button>
+        </form>
+
+        <div id="teacherSection" style="display:none;">
+            <h3>Teacher</h3>
+            <a href="manage_classroom.html">
+                <button>Go to Classroom Management</button>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Show the appropriate form or section based on the user's role
+        document.getElementById('studentBtn').addEventListener('click', function() {
+            document.getElementById('studentForm').style.display = 'block';
+            document.getElementById('teacherSection').style.display = 'none';
+            document.querySelector('.role-selection').style.display = 'none';
+        });
+
+        document.getElementById('teacherBtn').addEventListener('click', function() {
+            document.getElementById('teacherSection').style.display = 'block';
+            document.getElementById('studentForm').style.display = 'none';
+            document.querySelector('.role-selection').style.display = 'none';
+        });
+
+        // Handle student form submission
+        document.getElementById('studentForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent page reload
+
+            var studentCode = document.getElementById('studentCode').value;
+            if (studentCode === '12345') { // Example classroom code
+                alert('Successfully joined the classroom!');
+                window.location.href = 'classroom.html'; // Redirect to actual classroom page
+            } else {
+                alert('Incorrect classroom code');
+            }
+        });
+    </script>
+
+</body>
+</html>

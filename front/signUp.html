@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            background-image: url(schoo.jpg);
+            background-size: cover; /* ปรับขนาดภาพให้ครอบคลุมพื้นที่ทั้งหมด */
+            background-position: center center; /* จัดตำแหน่งภาพให้อยู่กลาง */
+            background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            padding: 100px;
+        }
+        .form-container {
+            width: 300px;
+            margin: 0 auto;
+            background-color: rgb(153, 148, 148);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h2{ 
+            text-align: center;
+        }
+        input[type="text"], input[type="password"], input[type="email"],input[type="confirmpassword"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 24px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            background-color: #10b3d4;
+            color: white;
+            border: none;
+            border-radius: 24px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #1a6ac7;
+        }
+        .link {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Create Account</h2>
+        <form action="register.php" method="POST">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter password" required>
+
+            <label for="confirmpassword">Confirm password:</label>
+            <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Enter Confirm password" required>
+
+            <input type="submit" value="Sign Up">
+        </form>
+        <div class="link">
+            <p>Already have an account? <a href="signIn.html">Sign In</a></p>
+        </div>
+    </div>
+
+</body>
+</html>
